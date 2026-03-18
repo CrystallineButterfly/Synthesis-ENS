@@ -1,0 +1,16 @@
+[project]
+name = "synthesis_ens"
+version = "0.1.0"
+description = "An ENS-native control plane that lets agents coordinate, route payments, and emit human-readable receipts without falling back to raw addresses."
+readme = "README.md"
+requires-python = ">=3.13"
+
+[tool.ruff]
+line-length = 100
+target-version = "py313"
+
+[tool.ty.terminal]
+error-on-warning = true
+
+[tool.ty.environment]
+python-version = "3.13"
