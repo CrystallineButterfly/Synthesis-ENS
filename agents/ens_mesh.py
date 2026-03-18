@@ -1,27 +1,153 @@
-"""Project-specific context module."""
+"""Project-specific metadata for the local runtime."""
 
-from __future__ import annotations
+from agents.models import ProjectSpec
 
-PROJECT_CONTEXT = {
-  "project_name": "NameMesh Control Plane",
-  "track": "ENS",
-  "pitch": "An ENS-native control plane that lets agents coordinate, route payments, and emit human-readable receipts without falling back to raw addresses.",
-  "overlap_targets": [
-    "Venice Private Agents",
-    "PayWithLocus",
-    "MetaMask Delegations",
-    "ERC-8004 Receipts",
-    "Slice",
-    "YieldGuard"
-  ],
-  "goals": [
-    "discover a bounded opportunity",
-    "plan a dry-run-first action",
-    "verify receipts and proofs"
-  ]
-}
+PROJECT_CONTEXT = {'repo_name': 'Synthesis-ENS',
+ 'project_name': 'NameMesh Control Plane',
+ 'track': 'ENS',
+ 'pitch': 'An ENS-native control plane that lets agents coordinate, route payments, '
+          'and emit human-readable receipts without falling back to raw addresses.',
+ 'idea_titles': ['ENS-Only Agent Coordination',
+                 'Human-Readable Treasury Routing',
+                 'Private Messaging with Name Boundaries'],
+ 'architecture_summary': 'Agents coordinate using ENS names, resolved permissions, and '
+                         'human-readable routing instead of raw addresses. The '
+                         'contract layer stores verified resolver commitments and '
+                         'communication receipts, while Python tooling renders '
+                         'name-based payment, messaging, and delegation plans.',
+ 'overlap_targets': ['Venice Private Agents',
+                     'PayWithLocus',
+                     'MetaMask Delegations',
+                     'ERC-8004 Receipts',
+                     'Slice',
+                     'YieldGuard'],
+ 'primary_contract_name': 'EnsCoordinationRegistry',
+ 'primary_python_module': 'ens_mesh',
+ 'category': 'identity',
+ 'daily_budget_usd': 102,
+ 'per_action_budget_usd': 25,
+ 'cooldown_seconds': 900,
+ 'discovery_inputs': [{'name': 'identity_state',
+                       'description': 'Names, wallets, manifests, and verification '
+                                      'proofs.'},
+                      {'name': 'permissions',
+                       'description': 'Which principals can act on which rails.'},
+                      {'name': 'reputation_events',
+                       'description': 'Receipts, scores, and attestation updates.'},
+                      {'name': 'receipts',
+                       'description': 'Submission notes and public evidence links.'}],
+ 'live_demo_steps': ['Copy .env.example to .env and fill the required keys.',
+                     'Deploy the contract with forge script script/Deploy.s.sol '
+                     '--broadcast for EnsCoordinationRegistry.',
+                     'Run python3 scripts/run_agent.py to produce a dry run for '
+                     'ens_mesh.',
+                     'Set LIVE_MODE=true and rerun python3 scripts/run_agent.py with '
+                     'real credentials.',
+                     'Run python3 scripts/render_submission.py and attach TxIDs plus '
+                     'repo links.'],
+ 'partners': [{'name': 'ENS',
+               'docs_url': 'https://docs.ens.domains/',
+               'env_vars': ['ENS_NAME'],
+               'endpoint_env': '',
+               'action_kind': 'contract_call',
+               'purpose': 'Publish human-readable coordination and identity receipts.'},
+              {'name': 'Venice',
+               'docs_url': 'https://docs.venice.ai/',
+               'env_vars': ['VENICE_API_KEY',
+                            'VENICE_CHAT_COMPLETIONS_URL',
+                            'VENICE_MODEL'],
+               'endpoint_env': 'VENICE_CHAT_COMPLETIONS_URL',
+               'action_kind': 'rest_json',
+               'purpose': 'Run private reasoning over sensitive inputs.'},
+              {'name': 'PayWithLocus',
+               'docs_url': 'https://docs.locus.finance/',
+               'env_vars': ['LOCUS_API_KEY', 'LOCUS_PAYMENT_URL'],
+               'endpoint_env': 'LOCUS_PAYMENT_URL',
+               'action_kind': 'rest_json',
+               'purpose': 'Create bounded subaccounts and controlled spend flows.'},
+              {'name': 'MetaMask Delegations',
+               'docs_url': 'https://docs.metamask.io/delegation-toolkit/',
+               'env_vars': ['RPC_URL'],
+               'endpoint_env': '',
+               'action_kind': 'contract_call',
+               'purpose': 'Enforce delegation scopes, expiries, and intent envelopes.'},
+              {'name': 'ERC-8004 Receipts',
+               'docs_url': 'https://eips.ethereum.org/EIPS/eip-8004',
+               'env_vars': ['RPC_URL'],
+               'endpoint_env': '',
+               'action_kind': 'contract_call',
+               'purpose': 'Anchor identity, task receipts, and reputation updates.'},
+              {'name': 'Slice',
+               'docs_url': 'https://docs.slice.so/',
+               'env_vars': ['SLICE_API_KEY', 'SLICE_HOOK_URL'],
+               'endpoint_env': 'SLICE_HOOK_URL',
+               'action_kind': 'rest_json',
+               'purpose': 'Drive checkout hooks and storefront policy changes.'}],
+ 'actions': [{'id': 'ens_ens_publish',
+              'target': 'ens',
+              'purpose': 'Use ENS for a bounded action in this repo.',
+              'partner': 'ENS',
+              'action_kind': 'contract_call',
+              'max_amount_usd': 5,
+              'priority': 100,
+              'sensitivity': 'low',
+              'notes': ['Call ENS only after a dry-run artifact exists.',
+                        'Use https://docs.ens.domains/ for credential setup.']},
+             {'id': 'venice_private_analysis',
+              'target': 'venice',
+              'purpose': 'Use Venice for a bounded action in this repo.',
+              'partner': 'Venice',
+              'action_kind': 'rest_json',
+              'max_amount_usd': 5,
+              'priority': 95,
+              'sensitivity': 'high',
+              'notes': ['Call Venice only after a dry-run artifact exists.',
+                        'Use https://docs.venice.ai/ for credential setup.']},
+             {'id': 'paywithlocus_subaccount_pay',
+              'target': 'paywithlocus',
+              'purpose': 'Use PayWithLocus for a bounded action in this repo.',
+              'partner': 'PayWithLocus',
+              'action_kind': 'rest_json',
+              'max_amount_usd': 120,
+              'priority': 90,
+              'sensitivity': 'medium',
+              'notes': ['Call PayWithLocus only after a dry-run artifact exists.',
+                        'Use https://docs.locus.finance/ for credential setup.']},
+             {'id': 'metamask_delegations_delegate_scope',
+              'target': 'metamask_delegations',
+              'purpose': 'Use MetaMask Delegations for a bounded action in this repo.',
+              'partner': 'MetaMask Delegations',
+              'action_kind': 'contract_call',
+              'max_amount_usd': 2,
+              'priority': 85,
+              'sensitivity': 'high',
+              'notes': ['Call MetaMask Delegations only after a dry-run artifact '
+                        'exists.',
+                        'Use https://docs.metamask.io/delegation-toolkit/ for '
+                        'credential setup.']},
+             {'id': 'erc_8004_receipts_receipt_anchor',
+              'target': 'erc_8004_receipts',
+              'purpose': 'Use ERC-8004 Receipts for a bounded action in this repo.',
+              'partner': 'ERC-8004 Receipts',
+              'action_kind': 'contract_call',
+              'max_amount_usd': 1,
+              'priority': 80,
+              'sensitivity': 'medium',
+              'notes': ['Call ERC-8004 Receipts only after a dry-run artifact exists.',
+                        'Use https://eips.ethereum.org/EIPS/eip-8004 for credential '
+                        'setup.']},
+             {'id': 'slice_checkout_hook',
+              'target': 'slice',
+              'purpose': 'Use Slice for a bounded action in this repo.',
+              'partner': 'Slice',
+              'action_kind': 'rest_json',
+              'max_amount_usd': 35,
+              'priority': 75,
+              'sensitivity': 'medium',
+              'notes': ['Call Slice only after a dry-run artifact exists.',
+                        'Use https://docs.slice.so/ for credential setup.']}]}
 
 
-def seed_targets() -> list[str]:
-    """Return the first batch of overlap targets for planning."""
-    return list(PROJECT_CONTEXT['overlap_targets'])
+def build_project_spec() -> ProjectSpec:
+    """Return the repository-specific project metadata."""
+    return ProjectSpec.from_dict(PROJECT_CONTEXT)

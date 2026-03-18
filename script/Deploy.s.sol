@@ -1,20 +1,18 @@
+
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.24;
 
 import {Script} from "forge-std/Script.sol";
-import {console2} from "forge-std/console2.sol";
+import {EnsCoordinationRegistry} from "src/EnsCoordinationRegistry.sol";
 
-import { EnsCoordinationRegistry } from "src/EnsCoordinationRegistry.sol";
-
-contract Deploy is Script {
+contract DeployScript is Script {
     function run() external returns (EnsCoordinationRegistry deployed) {
         address admin = vm.envAddress("ADMIN_WALLET_ADDRESS");
         address operator = vm.envAddress("OPERATOR_WALLET_ADDRESS");
-
+        address reporter = vm.envAddress("REPORTER_WALLET_ADDRESS");
+        uint256 principalFloor = vm.envUint("INITIAL_PRINCIPAL_FLOOR");
         vm.startBroadcast();
-        deployed = new EnsCoordinationRegistry(admin, operator);
+        deployed = new EnsCoordinationRegistry(admin, operator, reporter, principalFloor);
         vm.stopBroadcast();
-
-        console2.log("Deployed EnsCoordinationRegistry at", address(deployed));
     }
 }
