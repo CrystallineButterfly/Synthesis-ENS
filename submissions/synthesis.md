@@ -1,6 +1,6 @@
 # NameMesh Control Plane
 
-- **Repo:** TODO_GITHUB_URL/Synthesis-ENS
+- **Repo:** https://github.com/CrystallineButterfly/Synthesis-ENS-
 - **Primary track:** ENS
 - **Overlap targets:** Venice Private Agents, PayWithLocus, MetaMask Delegations, ERC-8004 Receipts, Slice, YieldGuard
 - **Primary contract:** EnsCoordinationRegistry
