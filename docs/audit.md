@@ -43,6 +43,14 @@ when live network credentials are absent. Network-only partners still report mis
 `cast send` output is now parsed for `transactionHash` explicitly before falling back to the
 raw stdout payload.
 
+## Track-specific trust boundaries
+
+- primary wrapper contract: `EnsCoordinationRegistry`
+- live-only partners: Venice, PayWithLocus, Slice
+- offline-prepared partners: ENS (prepared_contract_call), MetaMask Delegations (prepared_contract_call), ERC-8004 Receipts (prepared_contract_call)
+- highest-sensitivity actions: venice_private_analysis, metamask_delegations_delegate_scope
+- latest verification artifact: `artifacts/verification/0x69fd1de01c403c84be2fb3d12e5db6576682d64ca84b3424b9d43c5c25b25db2.json`
+
 ## Current posture
 
 ### Good
