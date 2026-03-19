@@ -7,5 +7,565 @@
     "details": {
       "status": "ready_for_credentials"
     }
+  },
+  {
+    "timestamp": "2026-03-19T03:30:05+00:00",
+    "stage": "discover",
+    "actor": "agent_runtime",
+    "message": "Ranked local signals.",
+    "details": {
+      "signals": [
+        {
+          "name": "identity_state",
+          "description": "Names, wallets, manifests, and verification proofs.",
+          "score": 95
+        },
+        {
+          "name": "permissions",
+          "description": "Which principals can act on which rails.",
+          "score": 90
+        },
+        {
+          "name": "reputation_events",
+          "description": "Receipts, scores, and attestation updates.",
+          "score": 85
+        },
+        {
+          "name": "receipts",
+          "description": "Submission notes and public evidence links.",
+          "score": 80
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:30:05+00:00",
+    "stage": "plan",
+    "actor": "agent_runtime",
+    "message": "Built bounded plan.",
+    "details": {
+      "plan_id": "0x1a50e3c52cad4b3814b72bd1bf77736d7e2ea7e375ec9c53f2ad3afa8b026378"
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:30:05+00:00",
+    "stage": "dry_run",
+    "actor": "agent_runtime",
+    "message": "Prepared partner previews.",
+    "details": {
+      "simulation_hash": "0xafb96cabf4ea709a4676f284089cd8ad51d72d12d1b86892cd83d27b772bf15a"
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:30:05+00:00",
+    "stage": "execute",
+    "actor": "agent_runtime",
+    "message": "Skipped live execution.",
+    "details": {
+      "missing_env": [
+        "ENS_NAME",
+        "LOCUS_API_KEY",
+        "LOCUS_PAYMENT_URL",
+        "RPC_URL",
+        "SLICE_API_KEY",
+        "SLICE_HOOK_URL",
+        "VENICE_API_KEY",
+        "VENICE_CHAT_COMPLETIONS_URL",
+        "VENICE_MODEL"
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:30:05+00:00",
+    "stage": "verify",
+    "actor": "agent_runtime",
+    "message": "Wrote verification.",
+    "details": {
+      "status": "verified",
+      "project_name": "NameMesh Control Plane",
+      "track": "ENS",
+      "plan_id": "0x1a50e3c52cad4b3814b72bd1bf77736d7e2ea7e375ec9c53f2ad3afa8b026378",
+      "simulation_hash": "0xafb96cabf4ea709a4676f284089cd8ad51d72d12d1b86892cd83d27b772bf15a",
+      "execution_status": "awaiting_credentials",
+      "tx_ids": [],
+      "created_at": "2026-03-19T03:30:05+00:00"
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:30:05+00:00",
+    "stage": "discover",
+    "actor": "agent_runtime",
+    "message": "Ranked local signals.",
+    "details": {
+      "signals": [
+        {
+          "name": "identity_state",
+          "description": "Names, wallets, manifests, and verification proofs.",
+          "score": 95
+        },
+        {
+          "name": "permissions",
+          "description": "Which principals can act on which rails.",
+          "score": 90
+        },
+        {
+          "name": "reputation_events",
+          "description": "Receipts, scores, and attestation updates.",
+          "score": 85
+        },
+        {
+          "name": "receipts",
+          "description": "Submission notes and public evidence links.",
+          "score": 80
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:30:05+00:00",
+    "stage": "plan",
+    "actor": "agent_runtime",
+    "message": "Built bounded plan.",
+    "details": {
+      "plan_id": "0x1a50e3c52cad4b3814b72bd1bf77736d7e2ea7e375ec9c53f2ad3afa8b026378"
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:30:05+00:00",
+    "stage": "dry_run",
+    "actor": "agent_runtime",
+    "message": "Prepared partner previews.",
+    "details": {
+      "simulation_hash": "0xafb96cabf4ea709a4676f284089cd8ad51d72d12d1b86892cd83d27b772bf15a"
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:30:05+00:00",
+    "stage": "execute",
+    "actor": "agent_runtime",
+    "message": "Skipped live execution.",
+    "details": {
+      "missing_env": [
+        "ENS_NAME",
+        "LOCUS_API_KEY",
+        "LOCUS_PAYMENT_URL",
+        "RPC_URL",
+        "SLICE_API_KEY",
+        "SLICE_HOOK_URL",
+        "VENICE_API_KEY",
+        "VENICE_CHAT_COMPLETIONS_URL",
+        "VENICE_MODEL"
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:30:05+00:00",
+    "stage": "verify",
+    "actor": "agent_runtime",
+    "message": "Wrote verification.",
+    "details": {
+      "status": "verified",
+      "project_name": "NameMesh Control Plane",
+      "track": "ENS",
+      "plan_id": "0x1a50e3c52cad4b3814b72bd1bf77736d7e2ea7e375ec9c53f2ad3afa8b026378",
+      "simulation_hash": "0xafb96cabf4ea709a4676f284089cd8ad51d72d12d1b86892cd83d27b772bf15a",
+      "execution_status": "awaiting_credentials",
+      "tx_ids": [],
+      "created_at": "2026-03-19T03:30:05+00:00"
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:39:23.678178+00:00",
+    "stage": "security_review",
+    "actor": "audit_pass",
+    "message": "Completed the shared hardening and offline-artifact audit pass.",
+    "details": {
+      "status": "audited_ready_pending_live_credentials",
+      "primary_contract": "EnsCoordinationRegistry.sol"
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:48:47+00:00",
+    "stage": "discover",
+    "actor": "agent_runtime",
+    "message": "Ranked local signals.",
+    "details": {
+      "signals": [
+        {
+          "name": "identity_state",
+          "description": "Names, wallets, manifests, and verification proofs.",
+          "score": 95
+        },
+        {
+          "name": "permissions",
+          "description": "Which principals can act on which rails.",
+          "score": 90
+        },
+        {
+          "name": "reputation_events",
+          "description": "Receipts, scores, and attestation updates.",
+          "score": 85
+        },
+        {
+          "name": "receipts",
+          "description": "Submission notes and public evidence links.",
+          "score": 80
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:48:47+00:00",
+    "stage": "plan",
+    "actor": "agent_runtime",
+    "message": "Built bounded plan for every repo action.",
+    "details": {
+      "plan_id": "0xf768fb551334b4a87cf16f0229816acd2acfca9c4ce491dbbbb92fd79d812d02",
+      "action_count": 6
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:48:47+00:00",
+    "stage": "dry_run",
+    "actor": "agent_runtime",
+    "message": "Prepared partner previews.",
+    "details": {
+      "simulation_hash": "0xd5af4d131b3c5d7e54d6cad7708a51a6e14b18358ce07a7f212dd7d660d465ad"
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:48:47+00:00",
+    "stage": "execute",
+    "actor": "agent_runtime",
+    "message": "Prepared offline artifacts and skipped network execution.",
+    "details": {
+      "missing_env": [
+        "LOCUS_API_KEY",
+        "LOCUS_PAYMENT_URL",
+        "SLICE_API_KEY",
+        "SLICE_HOOK_URL",
+        "VENICE_API_KEY",
+        "VENICE_CHAT_COMPLETIONS_URL",
+        "VENICE_MODEL"
+      ],
+      "artifact_count": 3
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:48:47+00:00",
+    "stage": "verify",
+    "actor": "agent_runtime",
+    "message": "Wrote verification.",
+    "details": {
+      "status": "verified",
+      "project_name": "NameMesh Control Plane",
+      "track": "ENS",
+      "plan_id": "0xf768fb551334b4a87cf16f0229816acd2acfca9c4ce491dbbbb92fd79d812d02",
+      "simulation_hash": "0xd5af4d131b3c5d7e54d6cad7708a51a6e14b18358ce07a7f212dd7d660d465ad",
+      "execution_status": "offline_prepared",
+      "tx_ids": [],
+      "artifact_paths": [
+        "artifacts/onchain_intents/ens_ens_publish.json",
+        "artifacts/onchain_intents/metamask_delegations_delegate_scope.json",
+        "artifacts/onchain_intents/erc_8004_receipts_receipt_anchor.json"
+      ],
+      "partner_statuses": {
+        "ENS": "prepared_contract_call",
+        "Venice": "awaiting_credentials",
+        "PayWithLocus": "awaiting_credentials",
+        "MetaMask Delegations": "prepared_contract_call",
+        "ERC-8004 Receipts": "prepared_contract_call",
+        "Slice": "awaiting_credentials"
+      },
+      "created_at": "2026-03-19T03:48:47+00:00"
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:50:41+00:00",
+    "stage": "discover",
+    "actor": "agent_runtime",
+    "message": "Ranked local signals.",
+    "details": {
+      "signals": [
+        {
+          "name": "identity_state",
+          "description": "Names, wallets, manifests, and verification proofs.",
+          "score": 95
+        },
+        {
+          "name": "permissions",
+          "description": "Which principals can act on which rails.",
+          "score": 90
+        },
+        {
+          "name": "reputation_events",
+          "description": "Receipts, scores, and attestation updates.",
+          "score": 85
+        },
+        {
+          "name": "receipts",
+          "description": "Submission notes and public evidence links.",
+          "score": 80
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:50:41+00:00",
+    "stage": "plan",
+    "actor": "agent_runtime",
+    "message": "Built bounded plan for every repo action.",
+    "details": {
+      "plan_id": "0xc5ed276cc6670456decd36dfe12958cdcee7f0c5e03e026244ba348b8478cb79",
+      "action_count": 6
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:50:41+00:00",
+    "stage": "dry_run",
+    "actor": "agent_runtime",
+    "message": "Prepared partner previews.",
+    "details": {
+      "simulation_hash": "0x595fe407ee5d82e1634286c2e7103f930a2428b59f4e4cee3568138d378ac85a"
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:50:41+00:00",
+    "stage": "execute",
+    "actor": "agent_runtime",
+    "message": "Prepared offline artifacts and skipped network execution.",
+    "details": {
+      "missing_env": [
+        "LOCUS_API_KEY",
+        "LOCUS_PAYMENT_URL",
+        "SLICE_API_KEY",
+        "SLICE_HOOK_URL",
+        "VENICE_API_KEY",
+        "VENICE_CHAT_COMPLETIONS_URL",
+        "VENICE_MODEL"
+      ],
+      "artifact_count": 3
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:50:41+00:00",
+    "stage": "verify",
+    "actor": "agent_runtime",
+    "message": "Wrote verification.",
+    "details": {
+      "status": "verified",
+      "project_name": "NameMesh Control Plane",
+      "track": "ENS",
+      "plan_id": "0xc5ed276cc6670456decd36dfe12958cdcee7f0c5e03e026244ba348b8478cb79",
+      "simulation_hash": "0x595fe407ee5d82e1634286c2e7103f930a2428b59f4e4cee3568138d378ac85a",
+      "execution_status": "offline_prepared",
+      "tx_ids": [],
+      "artifact_paths": [
+        "artifacts/onchain_intents/ens_ens_publish.json",
+        "artifacts/onchain_intents/metamask_delegations_delegate_scope.json",
+        "artifacts/onchain_intents/erc_8004_receipts_receipt_anchor.json"
+      ],
+      "partner_statuses": {
+        "ENS": "prepared_contract_call",
+        "Venice": "awaiting_credentials",
+        "PayWithLocus": "awaiting_credentials",
+        "MetaMask Delegations": "prepared_contract_call",
+        "ERC-8004 Receipts": "prepared_contract_call",
+        "Slice": "awaiting_credentials"
+      },
+      "created_at": "2026-03-19T03:50:41+00:00"
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:51:47+00:00",
+    "stage": "discover",
+    "actor": "agent_runtime",
+    "message": "Ranked local signals.",
+    "details": {
+      "signals": [
+        {
+          "name": "identity_state",
+          "description": "Names, wallets, manifests, and verification proofs.",
+          "score": 95
+        },
+        {
+          "name": "permissions",
+          "description": "Which principals can act on which rails.",
+          "score": 90
+        },
+        {
+          "name": "reputation_events",
+          "description": "Receipts, scores, and attestation updates.",
+          "score": 85
+        },
+        {
+          "name": "receipts",
+          "description": "Submission notes and public evidence links.",
+          "score": 80
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:51:47+00:00",
+    "stage": "plan",
+    "actor": "agent_runtime",
+    "message": "Built bounded plan for every repo action.",
+    "details": {
+      "plan_id": "0x77cc9b73b0b1d74de454bb55b07d1eaa3b532803ce8b0050a8e236a32ff54593",
+      "action_count": 6
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:51:47+00:00",
+    "stage": "dry_run",
+    "actor": "agent_runtime",
+    "message": "Prepared partner previews.",
+    "details": {
+      "simulation_hash": "0x6875494ea7a0c8d93396409fc219076ed8f89149fddd973b0d8705b1d132d3f7"
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:51:47+00:00",
+    "stage": "execute",
+    "actor": "agent_runtime",
+    "message": "Prepared offline artifacts and skipped network execution.",
+    "details": {
+      "missing_env": [
+        "LOCUS_API_KEY",
+        "LOCUS_PAYMENT_URL",
+        "SLICE_API_KEY",
+        "SLICE_HOOK_URL",
+        "VENICE_API_KEY",
+        "VENICE_CHAT_COMPLETIONS_URL",
+        "VENICE_MODEL"
+      ],
+      "artifact_count": 3
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:51:47+00:00",
+    "stage": "verify",
+    "actor": "agent_runtime",
+    "message": "Wrote verification.",
+    "details": {
+      "status": "verified",
+      "project_name": "NameMesh Control Plane",
+      "track": "ENS",
+      "plan_id": "0x77cc9b73b0b1d74de454bb55b07d1eaa3b532803ce8b0050a8e236a32ff54593",
+      "simulation_hash": "0x6875494ea7a0c8d93396409fc219076ed8f89149fddd973b0d8705b1d132d3f7",
+      "execution_status": "offline_prepared",
+      "tx_ids": [],
+      "artifact_paths": [
+        "artifacts/onchain_intents/ens_ens_publish.json",
+        "artifacts/onchain_intents/metamask_delegations_delegate_scope.json",
+        "artifacts/onchain_intents/erc_8004_receipts_receipt_anchor.json"
+      ],
+      "partner_statuses": {
+        "ENS": "prepared_contract_call",
+        "Venice": "awaiting_credentials",
+        "PayWithLocus": "awaiting_credentials",
+        "MetaMask Delegations": "prepared_contract_call",
+        "ERC-8004 Receipts": "prepared_contract_call",
+        "Slice": "awaiting_credentials"
+      },
+      "created_at": "2026-03-19T03:51:47+00:00"
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:52:11+00:00",
+    "stage": "discover",
+    "actor": "agent_runtime",
+    "message": "Ranked local signals.",
+    "details": {
+      "signals": [
+        {
+          "name": "identity_state",
+          "description": "Names, wallets, manifests, and verification proofs.",
+          "score": 95
+        },
+        {
+          "name": "permissions",
+          "description": "Which principals can act on which rails.",
+          "score": 90
+        },
+        {
+          "name": "reputation_events",
+          "description": "Receipts, scores, and attestation updates.",
+          "score": 85
+        },
+        {
+          "name": "receipts",
+          "description": "Submission notes and public evidence links.",
+          "score": 80
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:52:11+00:00",
+    "stage": "plan",
+    "actor": "agent_runtime",
+    "message": "Built bounded plan for every repo action.",
+    "details": {
+      "plan_id": "0x69fd1de01c403c84be2fb3d12e5db6576682d64ca84b3424b9d43c5c25b25db2",
+      "action_count": 6
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:52:11+00:00",
+    "stage": "dry_run",
+    "actor": "agent_runtime",
+    "message": "Prepared partner previews.",
+    "details": {
+      "simulation_hash": "0xf1c9131e6ea108e706e76672667dc5aa14fcfaa79c9dfeec6fa0366e5a92a002"
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:52:11+00:00",
+    "stage": "execute",
+    "actor": "agent_runtime",
+    "message": "Prepared offline artifacts and skipped network execution.",
+    "details": {
+      "missing_env": [
+        "LOCUS_API_KEY",
+        "LOCUS_PAYMENT_URL",
+        "SLICE_API_KEY",
+        "SLICE_HOOK_URL",
+        "VENICE_API_KEY",
+        "VENICE_CHAT_COMPLETIONS_URL",
+        "VENICE_MODEL"
+      ],
+      "artifact_count": 3
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:52:11+00:00",
+    "stage": "verify",
+    "actor": "agent_runtime",
+    "message": "Wrote verification.",
+    "details": {
+      "status": "verified",
+      "project_name": "NameMesh Control Plane",
+      "track": "ENS",
+      "plan_id": "0x69fd1de01c403c84be2fb3d12e5db6576682d64ca84b3424b9d43c5c25b25db2",
+      "simulation_hash": "0xf1c9131e6ea108e706e76672667dc5aa14fcfaa79c9dfeec6fa0366e5a92a002",
+      "execution_status": "offline_prepared",
+      "tx_ids": [],
+      "artifact_paths": [
+        "artifacts/onchain_intents/ens_ens_publish.json",
+        "artifacts/onchain_intents/metamask_delegations_delegate_scope.json",
+        "artifacts/onchain_intents/erc_8004_receipts_receipt_anchor.json"
+      ],
+      "partner_statuses": {
+        "ENS": "prepared_contract_call",
+        "Venice": "awaiting_credentials",
+        "PayWithLocus": "awaiting_credentials",
+        "MetaMask Delegations": "prepared_contract_call",
+        "ERC-8004 Receipts": "prepared_contract_call",
+        "Slice": "awaiting_credentials"
+      },
+      "created_at": "2026-03-19T03:52:11+00:00"
+    }
   }
 ]
